@@ -10,7 +10,7 @@ class Board
 		ttt_board[position] = marker
 	end
 
-	def valad_position?(position)
+	def valid_position?(position)
 		if ttt_board[position] == ''
 			true
 		else
@@ -18,7 +18,29 @@ class Board
 		end
 	end
 
+	def full_board?
+		if ttt_board.include?('')
+			false
+		else
+			true
+		end
+	end
 
+	def valid_input?(input)
+		if input.match(/[XxOo]/)
+			true
+		else
+			false
+		end
+	end
+
+	# def winner?(marker)
+	# 	if ttt_board == ''
+	# 		true
+	# 	else
+	# 		true
+	# 	end
+	# end
 
 
 
