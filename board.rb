@@ -1,9 +1,9 @@
-class Board
+class  Board
 
-	attr_accessor :ttt_board
+	attr_accessor :ttt_board #allows them to read + WRITE #:attaches to what you initialized
 
-	def initialize
-		@ttt_board = Array.new(9, '')
+	def initialize()
+		@ttt_board = Array.new(9, '')#instance variable
 	end
 
 	def update_position(position, marker)
@@ -12,17 +12,12 @@ class Board
 
 	def valid_position?(position)
 		if ttt_board[position] == ''
-			true
-		else
-			false
-		end
-	end
 
-	def full_board?
-		if ttt_board.include?('')
-			false
-		else
 			true
+
+		else
+
+			false
 		end
 	end
 
@@ -34,53 +29,24 @@ class Board
 		end
 	end
 
-def winner?(marker)
-
-			winners = [
-			[0, 1, 2],
-			[3, 4, 5],
-			[6, 7, 8],
-			[0, 3, 6],
-			[1, 4, 7],
-			[2, 5, 8],
-			[0, 4, 8],
-			[2, 4, 6]
-		]
-
-		results = false
-
-		winners.each do |inner_array|
-			count = 0
-
-			inner_array.each do |value|
-
-				if ttt_board[value] == marker
-					count += 1
-
-					if count == 3
-
-						results = true
-
-					end
-				end
-			end
+	def game_tie?
+		if ttt_board.include?('')
+			false
+		else
+			true
 		end
+	end
 
-		#Calls our results which is false by default.
-		#Only true if a set of the three combos matches.
-		results
+	def winner?(marker)
+		ttt_board[0] == marker && ttt_board[1] == marker && ttt_board[2] == marker ||
+		 ttt_board[3] == marker && ttt_board[4] == marker && ttt_board[5] == marker ||
+		 ttt_board[6] == marker && ttt_board[7]  == marker  && ttt_board[8] == marker ||
+		 ttt_board[0] == marker && ttt_board[3]  == marker  && ttt_board[6] == marker ||
+		 ttt_board[1] == marker && ttt_board[4]  == marker  && ttt_board[7] == marker ||
+		 ttt_board[2] == marker && ttt_board[5]  == marker  && ttt_board[8] == marker ||
+		 ttt_board[0] == marker && ttt_board[4]  == marker  && ttt_board[8] == marker ||
+		ttt_board[2] == marker && ttt_board[4]  == marker  && ttt_board[6] == marker
 	end
 end
 
-class Player
-
-	attr_accessor :name, :marker
-
-	def initialize
-		print 'Please enter your name: '
-		@name = gets.chomp
-		print 'Enter X or O to choose your marker: '
-		@marker = gets.chomp
-	end
-
-end
+	
