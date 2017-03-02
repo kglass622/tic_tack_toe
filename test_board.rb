@@ -59,10 +59,70 @@ class TestTicTacToe < Minitest::Test
 			assert_equal(false, board.valid_input?('@'))
 	end
 
-	# def test_winner
-	# 	board = Board.new
-	# 	marker = 'X'
-	# 	board.ttt_board = ['x', 'x', 'x', '', 'o', '', 'o', '', '']
-	# 	assert_equal(true, board.winner?(marker))
-	# end
+	def test_for_winner_at_012_X
+		board = Board.new
+		marker = 'X'
+		board.ttt_board = ['X', 'X', 'X', 'O', 'X', 'O', 'O', 'X', 'X']
+		assert_equal(true, board.winner?(marker))	
+	end
+
+	def test_for_winner_at_012_O
+		board = Board.new
+		marker = 'O'
+		board.ttt_board = ['O', 'O', 'O', 'O', 'X', 'O', 'O', 'X', 'X']
+		assert_equal(true, board.winner?(marker))	
+	end
+
+	def test_for_no_winner
+		board = Board.new
+		marker = 'X'
+		board.ttt_board = ['X', 'O', 'X', 'O', 'X', 'O', 'O', 'X', 'O']
+		assert_equal(false, board.winner?(marker))	
+	end
+
+	def test_for_winner_at_345_O
+		board = Board.new
+		marker = 'O'
+		board.ttt_board = ['X', 'O', 'X', 'O', 'O', 'O', 'O', 'X', 'X']
+		assert_equal(true, board.winner?(marker))	
+	end
+
+	def test_for_winner_at_678_X
+		board = Board.new
+		marker = 'X'
+		board.ttt_board = ['X', 'O', 'O', 'O', '', 'O', 'X', 'X', 'X']
+		assert_equal(true, board.winner?(marker))	
+	end
+
+	def test_for_winner_at_036_X_with_empties
+		board = Board.new
+		marker = 'X'
+		board.ttt_board = ['X', 'O', 'O', 'X', '', 'O', 'X', '', '']
+		assert_equal(true, board.winner?(marker))	
+	end
+
+	def test_for_no_winner_empties
+		board = Board.new
+		marker = 'X'
+		board.ttt_board = ['X', 'X', '', 'X', '', 'O', '', '', 'O']
+		assert_equal(false, board.winner?(marker))	
+	end
+
+	def test_for_no_winner_full_board
+		board = Board.new
+		marker = 'X'
+		board.ttt_board = ['O', 'X', 'X', 'X', 'X', 'O', 'O', 'O', 'X']
+		assert_equal(false, board.winner?(marker))	
+	end
+
+end
+
+class TestPlayer < Minitest::Test
+
+	def test_get_player_name
+		player = Player.new
+		assert_equal('kevin', player.name)
+		assert_equal('x', player.marker)
+	end
+
 end
