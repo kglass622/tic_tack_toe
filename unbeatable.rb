@@ -27,30 +27,30 @@ class Unbeatable
 				marker_1 = 'X'
 				marker_2 = 'O'
 
-				if marker == marker_1
-					opponent = marker_2
-				else
-					opponent = marker_1
-				end
+			if marker == marker_1
+			   opponent = marker_2
+			else
+				opponent = marker_1
+			end
 
-					results = ttt_board.index('')
+				results = ttt_board.index('')
 					
-					board_position.each_with_index do |win_combo, index|
+				board_position.each_with_index do |win_combo, index|
 
-						if 
-						win_combo.count(marker) == 2 &&win_combo.count('') == 1
+					if 
+					win_combo.count(marker) == 2 &&win_combo.count('') == 1
 						winning_pos = win_combo.index('') 
-						results = win_array[index][winning_pos]
+							results = win_array[index][winning_pos]
 
-							elsif win_combo.count(opponent) == 2 && win_combo.count('') == 1
-					 			  winning_pos = win_combo.index('')
-					 			  results = win_array[index][winning_pos] 
+					elsif win_combo.count(opponent) == 2 && win_combo.count('') == 1
+					 		winning_pos = win_combo.index('')
+					 		   results = win_array[index][winning_pos] 
 
-						else 
+					else 
 
-							results
+						results
 
-						end
+					end
 
 	end
 		results
