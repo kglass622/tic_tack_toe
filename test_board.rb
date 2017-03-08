@@ -133,6 +133,9 @@ class TestTicTacToe < Minitest::Test
 		marker = 'X'
 		board.ttt_board = ['','','X','X','','','X','','']
 		assert_equal(false, board.winner?(marker))
-	end
 
+	end
 end
+
+
+

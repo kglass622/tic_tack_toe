@@ -1,31 +1,19 @@
 require_relative 'console_game.rb'
 
-player1 = Sequential_AI.new('X')
-player2 = Random_AI.new('O')
+game = ConsoleGame.new
 
-game = ConsoleGame.new(player1, player2)
 game.intro
 
-# game.display_board
-
-# game.get_move
-
-# game.update_position
-
-# game.display_board
-
-# game.change_player
-
-# game.get_move
-
-# game.update_position
-
-# game.display_board
-
-until game.check_winner
-	game.display_board
-	game.get_move
-	game.update_position
+until game.check_winner || game.full_board?
 	game.change_player
-
+	game.display_board
+	game.update_position
 end
+	game.display_board
+
+if game.check_winner
+	puts "#{game.active_player.marker} WINS!"
+ else
+
+ puts "ITS A TIE!"
+ end

@@ -12,11 +12,8 @@ class  Board
 
 	def valid_position?(position)
 		if ttt_board[position] == ''
-
 			true
-
 		else
-
 			false
 		end
 	end
@@ -29,7 +26,7 @@ class  Board
 		end
 	end
 
-	def game_tie?
+	def full_board?
 		if ttt_board.include?('')
 			false
 		else
@@ -38,15 +35,19 @@ class  Board
 	end
 
 	def winner?(marker)
-		ttt_board[0] == marker && ttt_board[1] == marker && ttt_board[2] == marker ||
+		 ttt_board[0] == marker && ttt_board[1] == marker && ttt_board[2] == marker ||
 		 ttt_board[3] == marker && ttt_board[4] == marker && ttt_board[5] == marker ||
 		 ttt_board[6] == marker && ttt_board[7]  == marker  && ttt_board[8] == marker ||
 		 ttt_board[0] == marker && ttt_board[3]  == marker  && ttt_board[6] == marker ||
 		 ttt_board[1] == marker && ttt_board[4]  == marker  && ttt_board[7] == marker ||
 		 ttt_board[2] == marker && ttt_board[5]  == marker  && ttt_board[8] == marker ||
 		 ttt_board[0] == marker && ttt_board[4]  == marker  && ttt_board[8] == marker ||
-		ttt_board[2] == marker && ttt_board[4]  == marker  && ttt_board[6] == marker
+		 ttt_board[2] == marker && ttt_board[4]  == marker  && ttt_board[6] == marker
 	end
+
 end
 
-	
+							
+
+
+

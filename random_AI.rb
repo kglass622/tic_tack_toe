@@ -1,5 +1,5 @@
 class Random_AI
-
+		
 		attr_reader :marker
 
 	def initialize(marker)
