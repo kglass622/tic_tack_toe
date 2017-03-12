@@ -32,7 +32,12 @@ class TestUnbeatable < Minitest::Test
 		assert_equal(1, player.get_move(board_array))
 	end
 
-	
+	def test_win_at_5
+		player = Unbeatable.new('O')
+		board_array = ['','','','O','O','','','','']
+		assert_equal(5, player.get_move(board_array))
+	end
 
+	
 	
 end
