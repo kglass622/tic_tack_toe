@@ -80,8 +80,67 @@ class TestUnbeatable < Minitest::Test
 		assert_equal(6, player.check_for_fork(board_array))
 	end
 
-	
-	
-	
+def test_block_fork
+		player = Unbeatable.new('O')
+		board_array = ['', 'X', '', '', 'O', 'X', '', 'O', '']
+		assert_equal(2, player.block_fork(board_array))
+	end
+
+	def test_block_fork_2
+		player = Unbeatable.new('X')
+		board_array = ['O', 'X', '', 'X', '', '', 'O', '', '']
+		assert_equal(4, player.block_fork(board_array))
+	end
+
+	def test_for_block_3
+		player = Unbeatable.new('X')
+		board_array = ['X', 'O', '', 'O', '', '', '', '', 'X']
+		assert_equal(4, player.block_fork(board_array))
+	end
+
+	def test_block_fork_4
+		player = Unbeatable.new('O')
+		board_array = ['', 'O', '', 'X', 'O', '', '', 'X', '']
+		assert_equal(6, player.block_fork(board_array))
+	end
+
+	#TAKE CENTER
+
+	def test_take_center
+		player = Unbeatable.new('O')
+		board_array = ['', '', '', '', '', '', '', '', '']
+		assert_equal(4, player.take_center(board_array))
+	end
+
+	def test_take_center_2
+		player = Unbeatable.new('X')
+		board_array = ['', '', 'X', 'O', '', '', 'X', 'O', '']
+		assert_equal(4, player.take_center(board_array))
+	end
+
+	def test_take_filled_center_return_10
+		player = Unbeatable.new('X')
+		board_array = ['', '', 'X', 'O', 'O', '', 'X', 'O', '']
+		assert_equal(10, player.take_center(board_array))
+	end
+
+	#TAKE CORNER
+
+	def test_take_corner
+		player = Unbeatable.new('X')
+		board_array = ['O', '', '', '', '', '', '', '', '']
+		assert_equal(8, player.opposite_corner(board_array))
+	end
+
+	def test_take_corner_2
+		player = Unbeatable.new('O')
+		board_array = ['', '', '', '', '', '', '', '', 'X']
+		assert_equal(0, player.opposite_corner(board_array))
+	end
+
 	
 end
+	
+	
+	
+	
