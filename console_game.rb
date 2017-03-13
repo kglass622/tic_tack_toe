@@ -37,8 +37,9 @@ class ConsoleGame
 
 	def update_position
 		move = get_move
+		marker = active_player.marker
 		if board.valid_position?(move) 
-			marker = active_player.marker
+			
 			board.update_position(move, marker)
 		else
 			puts 'ERROR'

@@ -244,9 +244,7 @@ class Unbeatable
 		end
 
 		fork_spot = fork_spot.flatten.sort
-
 		intersections = []
-
 		fork_spot.each do |spot|
 
 			if ttt_board[spot] == ''
@@ -258,15 +256,11 @@ class Unbeatable
 			move = 3
 
 		elsif ttt_board == [opponent, '', '', '', marker, '', '', '', opponent]
-
 			move = 3
 
 		elsif intersections.detect { |match| intersections.count(match) > 1 } == nil
-
 				move = 9
-
 			else
-
 				move = intersections.detect { |match| intersections.count(match) > 1 }
 
 		end
@@ -282,41 +276,30 @@ class Unbeatable
 
 	end
 
-
-
 	def take_corner(ttt_board)
 
 			opponent = 'X'
-
 		if marker == 'X'
 			opponent = 'O'
-
 		else 
 			opponent = 'X'
 		end
 
 		if ttt_board[0] == opponent && ttt_board[8] == ''
-
 			move = 8
 
 		elsif 
-
 			ttt_board[6] == opponent && ttt_board[2] == ''
 			move = 2
-
 		elsif 
-
 			ttt_board[8] == opponent && ttt_board[0] == ''
 			move = 0
-
 		elsif 
-
 			ttt_board[2] == opponent && ttt_board[6] == ''
-			move = 2
+			move = 6
 		else 
 			move = 10
 		end
-
 	end
 
 	def take_empty_corner(ttt_board)
