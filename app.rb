@@ -6,6 +6,9 @@ class PersonalDetailsApp < Sinatra::Base
 		erb :tic_tac_toe
 	end
 
+get '/' do
+	erb :board
+end
 
 
 
