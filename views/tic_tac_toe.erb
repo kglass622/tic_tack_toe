@@ -1,11 +1,51 @@
 <html>
-<head>
-<center></center><h1>Lets play Tic-Tac-Toe</h1>
-<h2>enter player name</h2></center
 
-<link href="css/styles.css" rel="stylesheet">
-</head>
+<h1>Welcome to Tic Tac Toe</h1>
+<h2>Please select player 1 and player 2</h2>
+<p>Player 1 will be X, and player 2 will be O,</p>
+    <form action='/select_players' method='post'>
+    <table>
+        <tr>
+            <td>
+                <select name='player1'>
+                    <option value='Human'>Human</option>
+                    <option value='Easy'>Easy</option>
+                    <option value='Medium'>Medium</option>
+                    <option value='Good Luck, LOL!'>Impossible!</option>
+                </select>
+            </td>
+
+            <td>
+                <select name='player2'>
+                    <option value='Human'>Human</option>
+                    <option value='Easy'>Easy</option>
+                    <option value='Medium'>Medium</option>
+                    <option value='Good Luck, LOL!'>Impossible!</option>
+                    <input type="submit" value="Submit">
+                </select>
+            </td>
+        </tr>
+    </table>
+    </form>
+
+
+
+
+
 <body background="mined_minds.jpg">
+
+
+
+
+
+
+
+</html>
+
+<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+<center><footer><br><br>
+<div class="bg_color"><p id="center"> Posted by: Kevin Glass</p>
+<p id="center">Contact information: <a href="http://minedminds.org">Mined Minds</a></p>
 
 
 <script>
@@ -34,7 +74,9 @@ function checkTime(i) {
 
 
 
-</html>
+</div>
 
 
 
+
+</footer></body></center>
