@@ -338,4 +338,3 @@ class Unbeatable
 	end
 
 end
-
