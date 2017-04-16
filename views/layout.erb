@@ -1,0 +1,50 @@
+<html class="background font">
+<head>
+
+<link href ='css/style.css' rel='stylesheet'>
+</head>
+
+<center><h1><p class="header">Tic Tac Toe</p></h1></center>
+
+<%=yield%>
+
+</html>
+
+<br></br><br></br><br></br><br></br><br></br><br>
+<center><footer><br><br>
+<div class="bg_color"><p id="center"> Posted by: Kevin Glass</p>
+<p id="center">Contact information: <a href="http://minedminds.org">Mined Minds</a></p>
+
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+<body onload="startTime()">
+
+<div id="txt"></div>
+
+</body>
+
+
+
+</div>
+
+
+
+
+</footer></body></center>

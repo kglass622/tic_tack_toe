@@ -1,0 +1,117 @@
+<center><h2><p>It's <%=active_player%>'s turn.</p></h2>
+       
+<form action ='user_move' method='post'>
+    <input type='text' name='opponent' value= session[:opponent] hidden>
+
+<div id="board">
+    <table>
+      <tr id="row1">
+        <td class="square center"><input type="submit" name='square' value= <%=board.ttt_board[0]%>   
+            <% if board.ttt_board[0] == 'X' || board.ttt_board[0] == 'O' %>
+             class ="submit" 
+            <% end %>></td>
+
+        <td class="square v center"><input type="submit" name='square' value= <%=board.ttt_board[1]%>
+            <% if board.ttt_board[1] == 'X' || board.ttt_board[1] == 'O' %>
+             class ="submit" 
+            <% end %>></td>
+
+        <td class="square center"><input type="submit" name='square' value= <%=board.ttt_board[2]%>
+            <% if board.ttt_board[2] == 'X' || board.ttt_board[2] == 'O' %>
+             class ="submit" 
+            <% end %>></td>
+
+      </tr>
+      <tr id="row2">
+        <td class="square h center"><input type="submit" name='square' value= <%=board.ttt_board[3]%>
+            <% if board.ttt_board[3] == 'X' || board.ttt_board[3] == 'O' %>
+             class ="submit" 
+            <% end %>></td>
+
+        <td class="square v h center"><input type="submit" name='square' value= <%=board.ttt_board[4]%>
+            <% if board.ttt_board[4] == 'X' || board.ttt_board[4] == 'O' %>
+             class ="submit" 
+            <% end %>></td>
+
+        <td class="square h center"><input type="submit" name='square' value= <%=board.ttt_board[5]%>
+            <% if board.ttt_board[5] == 'X' || board.ttt_board[5] == 'O' %>
+             class ="submit" 
+            <% end %>></td>
+
+      </tr>
+      <tr id="row3">
+        <td class="square center"><input type="submit" name='square' value= <%=board.ttt_board[6]%>
+            <% if board.ttt_board[6] == 'X' || board.ttt_board[6] == 'O' %>
+             class ="submit" 
+            <% end %>></td>
+
+        <td class="square v center"><input type="submit" name='square' value= <%=board.ttt_board[7]%>
+            <% if board.ttt_board[7] == 'X' || board.ttt_board[7] == 'O' %>
+             class ="submit" 
+            <% end %>></td>
+
+        <td class="square center"><input type="submit" name='square' value= <%=board.ttt_board[8]%>
+            <% if board.ttt_board[8] == 'X' || board.ttt_board[8] == 'O' %>
+             class ="submit" 
+            <% end %>></td>
+
+      </tr>
+    </table>
+  </div>
+
+    <!-- <h2>
+    <input type="submit" name='square' value= <%=board.ttt_board[0]%>> | 
+    <input type="submit" name='square' value= <%=board.ttt_board[1]%>> | 
+    <input type="submit" name='square' value= <%=board.ttt_board[2]%>><br>
+    -------------- <br>
+    <input type="submit" name='square' value= <%=board.ttt_board[3]%>> | 
+    <input type="submit" name='square' value= <%=board.ttt_board[4]%>> | 
+    <input type="submit" name='square' value= <%=board.ttt_board[5]%>><br>
+    -------------- <br>
+    <input type="submit" name='square' value= <%=board.ttt_board[6]%>> | 
+    <input type="submit" name='square' value= <%=board.ttt_board[7]%>> | 
+    <input type="submit" name='square' value= <%=board.ttt_board[8]%>><br> 
+    </h2> -->
+    
+</form>
+</center>
+
+
+<br></br><br></br><br></br><br></br><br></br><br>
+<center><footer><br><br>
+<div class="bg_color"><p id="center"> Posted by: Kevin Glass</p>
+<p id="center">Contact information: <a href="http://minedminds.org">Mined Minds</a></p>
+
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+<body onload="startTime()">
+
+<div id="txt"></div>
+
+</body>
+
+
+
+</div>
+
+
+
+
+</footer></body></center>
